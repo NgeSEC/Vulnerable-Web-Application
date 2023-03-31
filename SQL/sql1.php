@@ -38,7 +38,7 @@
     <button type="button" name="homeButton" onclick="location.href='../homepage.html';">Home Page</button>
     <button type="button" name="mainButton" onclick="location.href='sqlmainpage.html';">Main Page</button>
 </div>
-
+<br />
 <div align="center">
     POST
     <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
