@@ -16,9 +16,13 @@
         padding: 8px;
     }
 
-    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
 
-    #customers tr:hover {background-color: #ddd;}
+    #customers tr:hover {
+        background-color: #ddd;
+    }
 
     #customers th {
         padding-top: 12px;
@@ -70,7 +74,8 @@ if (!$conn) {
 //echo "Connected successfully";
 
 if (isset($_POST["submit"]) || isset($_GET["submit"])){
-$firstname = $_POST["firstname"] || isset($_GET["submit"]);
+$firstname = isset($_POST["firstname"]) ? $_POST["firstname"] : $_GET["firstname"];
+
 $sql = "SELECT lastname FROM users WHERE firstname='$firstname'";//String
 $result = mysqli_query($conn, $sql);
 ?>
