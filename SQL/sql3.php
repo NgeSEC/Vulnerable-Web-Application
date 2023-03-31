@@ -36,7 +36,7 @@
 	//echo "Connected successfully";
 	if(isset($_POST["submit"])){
 		$number = $_POST['number'];
-		$query = "SELECT bookname,authorname FROM books WHERE number = '$number'"; //Is this same with the level 2?
+		$query = "SELECT bookname, authorname FROM books WHERE number = '$number'"; //Is this same with the level 2?
 		$result = mysqli_query($conn,$query);
 
 		if (!$result) { //Check result
@@ -44,11 +44,11 @@
 		    $message .= 'Whole query: ' . $query;
 		    die($message);
 		}
-
+        echo "<table><thead><th>Book Name</th><th>Author Name</th></thead><tbody>";
 		while ($row = mysqli_fetch_assoc($result)) {
-			echo "<hr>";
-		    echo $row['bookname']." ----> ".$row['authorname'];    
+		    echo "<tr><td>" . $row['bookname']."</td><td>".$row['authorname'] . "</td></tr>";
 		}
+        echo "</tbody></table>";
 
 		if(mysqli_num_rows($result) <= 0)
 			echo "0 result";
