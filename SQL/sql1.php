@@ -36,7 +36,17 @@
 </div>
 
 <div align="center">
+    POST
     <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+        <p>John -> Doe</p>
+        First name : <input type="text" name="firstname">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</div>
+
+<div align="center">
+    GET
+    <form action="<?php $_SERVER['PHP_SELF']; ?>" method="get">
         <p>John -> Doe</p>
         First name : <input type="text" name="firstname">
         <input type="submit" name="submit" value="Submit">
@@ -59,8 +69,8 @@ if (!$conn) {
 }
 //echo "Connected successfully";
 
-if (isset($_POST["submit"])){
-$firstname = $_POST["firstname"];
+if (isset($_POST["submit"]) || isset($_GET["submit"])){
+$firstname = $_POST["firstname"] || isset($_GET["submit"]);
 $sql = "SELECT lastname FROM users WHERE firstname='$firstname'";//String
 $result = mysqli_query($conn, $sql);
 ?>
