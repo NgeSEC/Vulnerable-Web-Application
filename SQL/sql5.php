@@ -3,6 +3,30 @@
 <head>
 	<title>SQL Injection</title>
 	<link rel="shortcut icon" href="../Resources/hmbct.png" />
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 	<div style="background-color:#c9c9c9;padding:15px;">
@@ -55,7 +79,7 @@
 		    $message .= 'Whole query: ' . $query;
 		    die($message);
 		}
-        echo "<table><thead><th>Book Name</th> <th>Author Name</th></thead><tbody>";
+        echo "<table id='customers'><thead><th>Book Name</th> <th>Author Name</th></thead><tbody>";
 		while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr><td>" . $row['bookname']."</td><td>".$row['authorname'] ."</td></tr>";
         }

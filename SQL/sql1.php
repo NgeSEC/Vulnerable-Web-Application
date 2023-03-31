@@ -4,6 +4,30 @@
     <title>SQL Injection</title>
     <link rel="shortcut icon" href="../Resources/hmbct.png"/>
 </head>
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
 <body>
 
 <div style="background-color:#c9c9c9;padding:15px;">
@@ -40,7 +64,7 @@ $firstname = $_POST["firstname"];
 $sql = "SELECT lastname FROM users WHERE firstname='$firstname'";//String
 $result = mysqli_query($conn, $sql);
 ?>
-<table>
+<table id="customers">
     <thead>
     <tr>
         <th>
