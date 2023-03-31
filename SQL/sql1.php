@@ -47,7 +47,7 @@
         <input type="submit" name="submit" value="Submit">
     </form>
 </div>
-
+<br />
 <div align="center">
     GET
     <form action="<?php $_SERVER['PHP_SELF']; ?>" method="get">
@@ -56,7 +56,7 @@
         <input type="submit" name="submit" value="Submit">
     </form>
 </div>
-
+<br />
 
 <?php
 $servername = "localhost";
