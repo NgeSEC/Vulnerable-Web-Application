@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/upload', [UploadController::class, 'index']);
+Route::post('/upload', [UploadController::class, 'store']);
+Route::get('/file/{fileName}', [FileController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
